@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLEANTheory — Precision ClO₂ Disinfection for Indoor Agriculture</title>
+  <meta name="description" content="EPA-registered chlorine dioxide disinfection systems engineered and managed by scientists for indoor agriculture facilities.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0, 210, 120, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 30%, rgba(0, 180, 100, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      background: rgba(0, 210, 120, 0.1);
+      border: 1px solid rgba(0, 210, 120, 0.2);
+      color: var(--accent, #00d278);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent, #00d278);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent, #00d278);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: var(--accent, #00d278);
+      color: #0a1a12;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .btn-primary:hover {
+      background: #00e888;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 210, 120, 0.3);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* Floating Proof Cards */
+    .proof-cards {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .proof-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      backdrop-filter: blur(12px);
+      animation: float-card 6s ease-in-out infinite;
+    }
+
+    .proof-card:nth-child(2) { animation-delay: -2s; }
+    .proof-card:nth-child(3) { animation-delay: -4s; }
+
+    @keyframes float-card {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .proof-card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .proof-card-icon.green {
+      background: rgba(0, 210, 120, 0.15);
+      color: #00d278;
+    }
+
+    .proof-card-icon.blue {
+      background: rgba(59, 130, 246, 0.15);
+      color: #3b82f6;
+    }
+
+    .proof-card-icon.gold {
+      background: rgba(245, 180, 50, 0.15);
+      color: #f5b432;
+    }
+
+    .proof-card-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .proof-card-value {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .proof-card-label {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Floating Gradient Orbs */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-orb-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0, 210, 120, 0.12) 0%, transparent 70%);
+      top: -10%;
+      right: -10%;
+      animation: orb-float-1 12s ease-in-out infinite;
+    }
+
+    .hero-orb-2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 140, 80, 0.1) 0%, transparent 70%);
+      bottom: -5%;
+      left: -5%;
+      animation: orb-float-2 15s ease-in-out infinite;
+    }
+
+    .hero-orb-3 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+      top: 40%;
+      right: 20%;
+      animation: orb-float-3 10s ease-in-out infinite;
+    }
+
+    @keyframes orb-float-1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(-30px, 20px) scale(1.05); }
+      66% { transform: translate(20px, -15px) scale(0.95); }
+    }
+
+    @keyframes orb-float-2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(25px, -20px) scale(1.08); }
+      66% { transform: translate(-15px, 25px) scale(0.92); }
+    }
+
+    @keyframes orb-float-3 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-20px, 30px) scale(1.1); }
+    }
+
+    /* ===== TRUST BAR ===== */
+    .trust-bar {
+      padding: 3rem 0;
+      position: relative;
+    }
+
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .trust-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .trust-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(0, 210, 120, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .trust-value {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--accent, #00d278);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .trust-label {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 400;
+    }
+
+    /* ===== SOLUTIONS PREVIEW ===== */
+    .solutions-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .solutions-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      background: rgba(0, 210, 120, 0.1);
+      border: 1px solid rgba(0, 210, 120, 0.2);
+      color: var(--accent, #00d278);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3.5rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .solution-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 20px 20px 0 0;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .solution-card:hover::before {
+      opacity: 1;
+    }
+
+    .solution-card:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .solution-card.blue::before { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+    .solution-card.violet::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+    .solution-card.green::before { background: linear-gradient(90deg, #00d278, #34d399); }
+
+    .solution-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .solution-card.blue .solution-icon {
+      background: rgba(59, 130, 246, 0.12);
+      color: #3b82f6;
+    }
+
+    .solution-card.violet .solution-icon {
+      background: rgba(139, 92, 246, 0.12);
+      color: #8b5cf6;
+    }
+
+    .solution-card.green .solution-icon {
+      background: rgba(0, 210, 120, 0.12);
+      color: #00d278;
+    }
+
+    .solution-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .solution-card .solution-type {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .solution-card p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .solution-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent, #00d278);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: gap 0.3s ease;
+    }
+
+    .solution-link:hover {
+      gap: 0.7rem;
+    }
+
+    /* ===== COMPARISON TEASER ===== */
+    .comparison-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .comparison-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .comparison-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      padding: 3rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .comparison-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 210, 120, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .comparison-table {
+      width: 100%;
+      margin-top: 2rem;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    .comparison-table thead th {
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .comparison-table thead th:first-child {
+      text-align: left;
+    }
+
+    .comparison-table thead th.highlight {
+      color: var(--accent, #00d278);
+      background: rgba(0, 210, 120, 0.06);
+      border-radius: 12px 12px 0 0;
+    }
+
+    .comparison-table tbody td {
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .comparison-table tbody td:first-child {
+      text-align: left;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .comparison-table tbody td.highlight {
+      background: rgba(0, 210, 120, 0.04);
+    }
+
+    .comparison-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comparison-table tbody tr:last-child td.highlight {
+      border-radius: 0 0 12px 12px;
+    }
+
+    .check {
+      color: var(--accent, #00d278);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .cross {
+      color: #ef4444;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .comparison-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    /* ===== PROCESS TIMELINE ===== */
+    .process-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .process-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 0;
+    }
+
+    .process-step {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 2rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .process-step:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(0, 210, 120, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(0, 210, 120, 0.1);
+      border: 1px solid rgba(0, 210, 120, 0.2);
+      color: var(--accent, #00d278);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .process-step h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .process-step p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.6;
+    }
+
+    /* ===== TESTIMONIAL ===== */
+    .testimonial-section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .testimonial-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      padding: 3.5rem;
+      position: relative;
+      border-left: 4px solid var(--accent, #00d278);
+    }
+
+    .testimonial-quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--accent, #00d278);
+      opacity: 0.3;
+      line-height: 1;
+      position: absolute;
+      top: 1.5rem;
+      left: 2.5rem;
+    }
+
+    .testimonial-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(0, 210, 120, 0.3), rgba(59, 130, 246, 0.3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .testimonial-info h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .testimonial-info span {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 6rem 0 8rem;
+      position: relative;
+    }
+
+    .cta-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, rgba(0, 210, 120, 0.08) 0%, rgba(0, 140, 80, 0.04) 100%);
+      border: 1px solid rgba(0, 210, 120, 0.15);
+      border-radius: 28px;
+      padding: 4rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 210, 120, 0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .cta-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .cta-card p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .cta-card .btn-primary {
+      position: relative;
+      padding: 1rem 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 100px 0 60px;
+        min-height: auto;
+      }
+      .solutions-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .proof-cards {
+        flex-direction: column;
+      }
+      .comparison-card {
+        padding: 1.5rem;
+        overflow-x: auto;
+      }
+      .comparison-table {
+        min-width: 500px;
+      }
+      .testimonial-card {
+        padding: 2rem 1.5rem;
+      }
+      .cta-card {
+        padding: 3rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-buttons {
+        flex-direction: column;
+      }
+      .hero-buttons .btn-primary,
+      .hero-buttons .btn-outline {
+        justify-content: center;
+      }
+    }
+
+    /* ===== REVEAL ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">CLEAN<span>Theory</span></a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="solutions/fertox.html">FERTox</a>
+        <a href="solutions/pathox.html">PATHox</a>
+        <a href="solutions/airrox.html">AIRRox</a>
+        <a href="clo2-vs-alternatives.html">ClO₂ Science</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta">Get Started</a>
+      </div>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+
+    <div class="hero-container">
+      <div class="hero-content reveal">
+        <div class="hero-tag">Scientist-Managed Disinfection</div>
+        <h1>Precision ClO₂ Disinfection for <em>Indoor Agriculture</em></h1>
+        <p class="hero-subtitle">EPA-registered chlorine dioxide chemistry, deployed and managed by scientists — so you can grow with confidence.</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn-primary">Schedule Consultation <span>&rarr;</span></a>
+          <a href="#solutions" class="btn-outline">Explore Solutions</a>
+        </div>
+        <div class="proof-cards">
+          <div class="proof-card">
+            <div class="proof-card-icon green">&#10003;</div>
+            <div class="proof-card-text">
+              <span class="proof-card-value">99.9%</span>
+              <span class="proof-card-label">Pathogen Kill</span>
+            </div>
+          </div>
+          <div class="proof-card">
+            <div class="proof-card-icon blue">&#9733;</div>
+            <div class="proof-card-text">
+              <span class="proof-card-value">EPA</span>
+              <span class="proof-card-label">Registered</span>
+            </div>
+          </div>
+          <div class="proof-card">
+            <div class="proof-card-icon gold">&#9679;</div>
+            <div class="proof-card-text">
+              <span class="proof-card-value">Zero</span>
+              <span class="proof-card-label">Residue</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-grid reveal">
+        <div class="trust-card">
+          <div class="trust-value">99.9%</div>
+          <div class="trust-label">Pathogen Elimination</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-value">20+</div>
+          <div class="trust-label">Facility Partners</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-value">3</div>
+          <div class="trust-label">Integrated Solutions</div>
+        </div>
+        <div class="trust-card">
+          <div class="trust-value">7/365</div>
+          <div class="trust-label">Managed Service</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS PREVIEW -->
+  <section class="solutions-section" id="solutions">
+    <div class="solutions-inner">
+      <div class="reveal">
+        <div class="section-tag">Our Solutions</div>
+        <h2 class="section-title">Three Systems. Total Protection.</h2>
+      </div>
+      <div class="solutions-grid reveal">
+        <div class="solution-card blue">
+          <div class="solution-icon">&#128167;</div>
+          <h3>FERTox&trade;</h3>
+          <div class="solution-type">Water Treatment</div>
+          <p>Eliminate waterborne pathogens from irrigation lines and fertigation systems without disrupting nutrient chemistry or beneficial biology.</p>
+          <a href="solutions/fertox.html" class="solution-link">Learn More &rarr;</a>
+        </div>
+        <div class="solution-card violet">
+          <div class="solution-icon">&#128737;</div>
+          <h3>PATHox&trade;</h3>
+          <div class="solution-type">Surface Disinfection</div>
+          <p>Precision surface disinfection that reaches every crack, crevice, and biofilm — eliminating Fusarium, Botrytis, powdery mildew, and more.</p>
+          <a href="solutions/pathox.html" class="solution-link">Learn More &rarr;</a>
+        </div>
+        <div class="solution-card green">
+          <div class="solution-icon">&#127811;</div>
+          <h3>AIRRox&trade;</h3>
+          <div class="solution-type">Air Treatment</div>
+          <p>Continuous airborne pathogen suppression throughout your facility. Gaseous ClO₂ neutralizes mold spores, bacteria, and viruses in the air column.</p>
+          <a href="solutions/airrox.html" class="solution-link">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TEASER -->
+  <section class="comparison-section">
+    <div class="comparison-inner">
+      <div class="reveal">
+        <div class="section-tag">The Science</div>
+        <h2 class="section-title">Why ClO₂ Outperforms Every Alternative</h2>
+      </div>
+      <div class="comparison-card reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th class="highlight">ClO₂</th>
+              <th>H₂O₂</th>
+              <th>Ozone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Biofilm Penetration</td>
+              <td class="highlight"><span class="check">&#10003;</span></td>
+              <td><span class="cross">&#10007;</span></td>
+              <td><span class="cross">&#10007;</span></td>
+            </tr>
+            <tr>
+              <td>Effective at Low PPM</td>
+              <td class="highlight"><span class="check">&#10003;</span></td>
+              <td><span class="cross">&#10007;</span></td>
+              <td><span class="check">&#10003;</span></td>
+            </tr>
+            <tr>
+              <td>Safe for Plants</td>
+              <td class="highlight"><span class="check">&#10003;</span></td>
+              <td><span class="check">&#10003;</span></td>
+              <td><span class="cross">&#10007;</span></td>
+            </tr>
+            <tr>
+              <td>No Harmful Residue</td>
+              <td class="highlight"><span class="check">&#10003;</span></td>
+              <td><span class="check">&#10003;</span></td>
+              <td><span class="check">&#10003;</span></td>
+            </tr>
+            <tr>
+              <td>pH Neutral (2&ndash;10 range)</td>
+              <td class="highlight"><span class="check">&#10003;</span></td>
+              <td><span class="cross">&#10007;</span></td>
+              <td><span class="cross">&#10007;</span></td>
+            </tr>
+            <tr>
+              <td>Kills Spores &amp; Fungi</td>
+              <td class="highlight"><span class="check">&#10003;</span></td>
+              <td><span class="cross">&#10007;</span></td>
+              <td><span class="check">&#10003;</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="comparison-cta">
+          <a href="clo2-vs-alternatives.html" class="btn-outline">See Full Comparison &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS TIMELINE -->
+  <section class="process-section">
+    <div class="process-inner">
+      <div class="reveal">
+        <div class="section-tag">How It Works</div>
+        <h2 class="section-title">From Assessment to Protection in 6 Steps</h2>
+      </div>
+      <div class="process-grid reveal">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Facility Assessment</h3>
+          <p>Our scientists evaluate your facility, water sources, airflow patterns, and pathogen risk profile.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Custom Protocol Design</h3>
+          <p>We engineer a tailored ClO₂ treatment plan specific to your crop, facility layout, and operational workflow.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Equipment Installation</h3>
+          <p>Professional deployment of precision dosing and delivery systems with minimal disruption to your operations.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>System Calibration</h3>
+          <p>Fine-tuned calibration ensures optimal ClO₂ concentrations for maximum efficacy and plant safety.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <h3>Ongoing Monitoring</h3>
+          <p>Continuous remote and on-site monitoring by our science team to maintain peak performance 7 days a week.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">6</div>
+          <h3>Continuous Optimization</h3>
+          <p>Data-driven adjustments and protocol refinements ensure your system evolves with your facility needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial-section">
+    <div class="testimonial-inner">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <p class="testimonial-text">CLEANTheory transformed our approach to pathogen management. Their precision ClO₂ systems eliminated our Fusarium issues completely.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SG</div>
+          <div class="testimonial-info">
+            <h4>Shane Gallick</h4>
+            <span>Commercial Cultivator</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div class="cta-card reveal">
+        <h2>Ready to Eliminate Pathogens?</h2>
+        <p>Get a customized ClO₂ disinfection plan tailored to your facility. No obligation, no pressure — just science.</p>
+        <a href="contact.html" class="btn-primary">Schedule Your Free Assessment <span>&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">CLEAN<span>Theory</span></div>
+          <p>Precision ClO₂ disinfection engineered for indoor agriculture. EPA-registered. Scientist-managed.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <a href="solutions/fertox.html">FERTox&trade;</a>
+          <a href="solutions/pathox.html">PATHox&trade;</a>
+          <a href="solutions/airrox.html">AIRRox&trade;</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About</a>
+          <a href="clo2-vs-alternatives.html">ClO₂ Science</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:4135647940">(413) 564-7940</a>
+          <a href="mailto:info@cleantheory.com">info@cleantheory.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 CLEANTheory Inc. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
