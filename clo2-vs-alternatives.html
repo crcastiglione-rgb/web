@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClO2 vs Alternatives | CLEANTheory</title>
+  <meta name="description" content="Compare chlorine dioxide (ClO2) against hydrogen peroxide, ozone, hypochlorous acid, bleach, and peracetic acid for indoor agriculture disinfection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    :root {
+      --bg-deep: #060d09;
+      --bg-card: #0c1a10;
+      --bg-card-hover: #122117;
+      --accent: #22c55e;
+      --accent-dim: rgba(34, 197, 94, 0.15);
+      --accent-glow: rgba(34, 197, 94, 0.3);
+      --text-primary: #f0fdf4;
+      --text-secondary: #a3b8a8;
+      --text-muted: #6b7f70;
+      --border-subtle: rgba(34, 197, 94, 0.12);
+      --danger: #ef4444;
+      --warning: #f59e0b;
+    }
+
+    /* ---- HERO ---- */
+    .clo2-hero {
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(34,197,94,0.08) 0%, transparent 70%),
+        var(--bg-deep);
+    }
+
+    .clo2-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .clo2-hero h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .clo2-hero .subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ---- VERDICT CARDS ---- */
+    .verdict-section {
+      padding: 5rem 2rem;
+      background: var(--bg-deep);
+    }
+
+    .verdict-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .verdict-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2.25rem 1.75rem;
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .verdict-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 32px rgba(34,197,94,0.1);
+    }
+
+    .verdict-card .verdict-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .verdict-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .verdict-card p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    @media (max-width: 900px) {
+      .verdict-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .verdict-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---- COMPARISON TABLE ---- */
+    .comparison-section {
+      padding: 5rem 2rem;
+      background:
+        linear-gradient(180deg, var(--bg-deep) 0%, #081210 100%);
+    }
+
+    .comparison-section .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .comparison-section .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .comparison-section .section-heading p {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-secondary);
+      font-weight: 300;
+      font-size: 1.05rem;
+    }
+
+    .table-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .comparison-table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .comparison-table thead th {
+      background: var(--bg-card);
+      padding: 1.1rem 1rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-secondary);
+      border-bottom: 2px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+
+    .comparison-table thead th.col-highlight {
+      background: rgba(34,197,94,0.12);
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      position: relative;
+    }
+
+    .comparison-table thead th.col-highlight::after {
+      content: "BEST";
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--bg-deep);
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 0 0 6px 6px;
+      letter-spacing: 0.08em;
+    }
+
+    .comparison-table tbody tr {
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background 0.2s ease;
+    }
+
+    .comparison-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-table tbody tr:hover {
+      background: rgba(34,197,94,0.03);
+    }
+
+    .comparison-table td {
+      padding: 1rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .comparison-table td.col-highlight {
+      background: rgba(34,197,94,0.06);
+    }
+
+    .comparison-table .mark-yes {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .comparison-table .mark-no {
+      color: var(--danger);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .comparison-table .mark-partial {
+      color: var(--warning);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .scroll-hint {
+      display: none;
+      text-align: center;
+      color: var(--text-muted);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 860px) {
+      .scroll-hint {
+        display: block;
+      }
+    }
+
+    /* ---- CHEMISTRY DEEP-DIVE ---- */
+    .chemistry-section {
+      padding: 5rem 2rem;
+      background: var(--bg-deep);
+    }
+
+    .chemistry-section .section-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .chemistry-section .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .chemistry-section .section-heading p {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-secondary);
+      font-weight: 300;
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .chem-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .chem-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .chem-card:hover {
+      border-color: rgba(239, 68, 68, 0.3);
+      box-shadow: 0 4px 24px rgba(239, 68, 68, 0.06);
+    }
+
+    .chem-card .chem-label {
+      display: inline-block;
+      background: rgba(239, 68, 68, 0.1);
+      color: #f87171;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+
+    .chem-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .chem-card p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .chem-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0 0;
+    }
+
+    .chem-card ul li {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      padding: 0.35rem 0;
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.55;
+      font-weight: 300;
+    }
+
+    .chem-card ul li::before {
+      content: "×";
+      position: absolute;
+      left: 0;
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    @media (max-width: 700px) {
+      .chem-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---- CLO2 HIGHLIGHT ---- */
+    .clo2-highlight {
+      padding: 5rem 2rem;
+      background:
+        linear-gradient(180deg, var(--bg-deep) 0%, #081210 100%);
+    }
+
+    .clo2-highlight-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, rgba(34,197,94,0.08) 0%, rgba(34,197,94,0.02) 100%);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+    }
+
+    .clo2-highlight-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .clo2-highlight-inner p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+    }
+
+    .clo2-highlight-inner p:last-child {
+      margin-bottom: 0;
+    }
+
+    .clo2-highlight-inner strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .highlight-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .highlight-feature {
+      text-align: center;
+      padding: 1.25rem 1rem;
+      background: rgba(34,197,94,0.06);
+      border-radius: 8px;
+      border: 1px solid rgba(34,197,94,0.1);
+    }
+
+    .highlight-feature .hf-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .highlight-feature h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-feature p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 640px) {
+      .clo2-highlight-inner {
+        padding: 2rem 1.5rem;
+      }
+
+      .highlight-features {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---- CTA ---- */
+    .cta-section {
+      padding: 6rem 2rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 50% 60% at 50% 100%, rgba(34,197,94,0.1) 0%, transparent 70%),
+        var(--bg-deep);
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--accent);
+      color: var(--bg-deep);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(34,197,94,0.3);
+    }
+
+    /* ---- FOOTER ---- */
+    .site-footer {
+      background: #040a06;
+      border-top: 1px solid var(--border-subtle);
+      padding: 4rem 2rem 2rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+
+    .footer-brand .footer-logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .footer-brand .footer-logo span {
+      color: var(--accent);
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      font-weight: 300;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col ul li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 300;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--accent);
+    }
+
+    .footer-contact p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      line-height: 1.55;
+    }
+
+    .footer-contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 300;
+    }
+
+    @media (max-width: 800px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">CLEAN<span>Theory</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="solutions/fertox.html">FERTox</a>
+        <a href="solutions/pathox.html">PATHox</a>
+        <a href="solutions/airrox.html">AIRRox</a>
+        <a href="clo2-vs-alternatives.html" class="active">ClO&#x2082; Science</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta">Get Started</a>
+      </div>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="clo2-hero reveal">
+    <h1>ClO&#x2082; vs. <em>The Alternatives</em></h1>
+    <p class="subtitle">Chlorine dioxide is the gold standard for indoor agriculture disinfection. Here's why no other chemistry can match its breadth of efficacy, safety profile, and operational simplicity.</p>
+  </section>
+
+  <!-- ============ VERDICT CARDS ============ -->
+  <section class="verdict-section reveal">
+    <div class="verdict-grid">
+      <div class="verdict-card">
+        <span class="verdict-icon">&#x1F9EA;</span>
+        <h3>Broadest Spectrum</h3>
+        <p>ClO&#x2082; eliminates bacteria, fungi, viruses, and biofilm &mdash; all with a single chemistry. No pathogen category is left untreated.</p>
+      </div>
+      <div class="verdict-card">
+        <span class="verdict-icon">&#x1F343;</span>
+        <h3>No Harmful Residues</h3>
+        <p>Breaks down into simple salt and water. Zero VOCs, no toxic byproducts, no trihalomethanes &mdash; safe for crops and workers.</p>
+      </div>
+      <div class="verdict-card">
+        <span class="verdict-icon">&#x1F6E1;&#xFE0F;</span>
+        <h3>Material Safe</h3>
+        <p>At use-level concentrations, ClO&#x2082; won't corrode metals, degrade plastics, or damage irrigation equipment &mdash; unlike ozone and bleach.</p>
+      </div>
+      <div class="verdict-card">
+        <span class="verdict-icon">&#x2696;&#xFE0F;</span>
+        <h3>pH Independent</h3>
+        <p>Effective across a broad pH range of 4&ndash;10. No constant pH adjustments required &mdash; it simply works in real-world water conditions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPARISON TABLE ============ -->
+  <section class="comparison-section reveal">
+    <div class="section-heading">
+      <h2>Head-to-Head Comparison</h2>
+      <p>How chlorine dioxide stacks up against every common disinfection chemistry.</p>
+    </div>
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criteria</th>
+            <th class="col-highlight">ClO&#x2082;</th>
+            <th>H&#x2082;O&#x2082;</th>
+            <th>O&#x2083; (Ozone)</th>
+            <th>HOCl</th>
+            <th>NaOCl (Bleach)</th>
+            <th>PAA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Biofilm Penetration</td>
+            <td class="col-highlight"><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+            <td><span class="mark-partial">~</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+            <td><span class="mark-partial">~</span></td>
+          </tr>
+          <tr>
+            <td>Broad Spectrum Kill</td>
+            <td class="col-highlight"><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-partial">~</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+          </tr>
+          <tr>
+            <td>Residue Safety</td>
+            <td class="col-highlight"><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-partial">~</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+            <td><span class="mark-partial">~</span></td>
+          </tr>
+          <tr>
+            <td>Material Compatibility</td>
+            <td class="col-highlight"><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+            <td><span class="mark-partial">~</span></td>
+          </tr>
+          <tr>
+            <td>pH Independence</td>
+            <td class="col-highlight"><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-partial">~</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+            <td><span class="mark-partial">~</span></td>
+          </tr>
+          <tr>
+            <td>Regulatory Status (EPA)</td>
+            <td class="col-highlight"><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+          </tr>
+          <tr>
+            <td>Ease of Handling</td>
+            <td class="col-highlight"><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-yes">&#x2713;</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+            <td><span class="mark-partial">~</span></td>
+            <td><span class="mark-partial">~</span></td>
+            <td><span class="mark-no">&#x2717;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="scroll-hint">&larr; Scroll horizontally to view all columns &rarr;</p>
+  </section>
+
+  <!-- ============ CHEMISTRY DEEP-DIVE ============ -->
+  <section class="chemistry-section reveal">
+    <div class="section-heading">
+      <h2>Why the Alternatives Fall Short</h2>
+      <p>Every disinfectant has trade-offs. Here's what the chemistry reveals about each common alternative.</p>
+    </div>
+    <div class="chem-grid">
+
+      <div class="chem-card">
+        <span class="chem-label">H&#x2082;O&#x2082; &mdash; Hydrogen Peroxide</span>
+        <h3>Weak Oxidizer, Brute-Force Dosing</h3>
+        <p>Hydrogen peroxide is a relatively weak oxidizer that requires high concentrations (often 3&ndash;5%) to achieve meaningful kill rates. At those levels, it can damage root tissue and beneficial biology.</p>
+        <ul>
+          <li>Cannot penetrate mature biofilm matrices</li>
+          <li>Rapidly decomposed by catalase-producing organisms</li>
+          <li>Requires constant re-dosing due to short persistence</li>
+          <li>High concentrations risk phytotoxicity</li>
+        </ul>
+      </div>
+
+      <div class="chem-card">
+        <span class="chem-label">O&#x2083; &mdash; Ozone</span>
+        <h3>Unstable, Corrosive, and Hard to Control</h3>
+        <p>Ozone is a powerful but extremely unstable oxidizer. Its half-life in water is measured in minutes, making consistent dosing across an irrigation system nearly impossible.</p>
+        <ul>
+          <li>Rapidly degrades rubber seals, gaskets, and plastic fittings</li>
+          <li>Requires on-site generation equipment with high energy costs</li>
+          <li>Workplace exposure limits are very low (0.1 ppm) &mdash; safety risk</li>
+          <li>No residual protection downstream of injection point</li>
+        </ul>
+      </div>
+
+      <div class="chem-card">
+        <span class="chem-label">HOCl &mdash; Hypochlorous Acid</span>
+        <h3>pH Sensitive, Toxic Byproducts</h3>
+        <p>Hypochlorous acid is effective in a narrow pH window (5.0&ndash;6.5). Outside that range it converts to hypochlorite, losing efficacy dramatically. In organic-rich water, it forms dangerous disinfection byproducts.</p>
+        <ul>
+          <li>Efficacy drops sharply above pH 7.0</li>
+          <li>Forms trihalomethanes (THMs) and haloacetic acids in the presence of organics</li>
+          <li>Requires continuous pH monitoring and adjustment systems</li>
+          <li>Reacts with ammonia to form chloramines, reducing kill capacity</li>
+        </ul>
+      </div>
+
+      <div class="chem-card">
+        <span class="chem-label">NaOCl &mdash; Bleach</span>
+        <h3>Corrosive, Toxic Trihalomethanes</h3>
+        <p>Sodium hypochlorite (bleach) is cheap and familiar, but it comes with severe downsides for controlled environment agriculture. It is corrosive to metals and produces toxic chlorinated byproducts.</p>
+        <ul>
+          <li>Generates trihalomethanes (THMs), a known carcinogen class</li>
+          <li>Highly corrosive to stainless steel, aluminum, and copper fittings</li>
+          <li>Efficacy is entirely pH dependent &mdash; useless above pH 8</li>
+          <li>Strong odor and off-gassing poses worker safety concerns</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CLO2 HIGHLIGHT ============ -->
+  <section class="clo2-highlight reveal">
+    <div class="clo2-highlight-inner">
+      <h2>How ClO&#x2082; Actually Works</h2>
+      <p><strong>Selective oxidation through electron transfer</strong> &mdash; unlike chlorine-based disinfectants that kill through chlorination (substituting chlorine atoms into organic molecules), chlorine dioxide works by accepting electrons from target organisms. This is a fundamentally different and cleaner mechanism.</p>
+      <p>Because ClO&#x2082; does not chlorinate, it <strong>does not produce trihalomethanes, haloacetic acids, or other toxic chlorinated byproducts</strong>. The end products are chlorite and ultimately simple sodium chloride &mdash; table salt.</p>
+      <p><strong>Biofilm penetration</strong> is where ClO&#x2082; truly separates itself. Biofilms are polysaccharide matrices that shield colonies of bacteria and fungi from most disinfectants. ClO&#x2082; is a dissolved gas with a small molecular size, allowing it to diffuse through biofilm layers and oxidize organisms from the inside out. Hydrogen peroxide and bleach simply cannot achieve this level of penetration.</p>
+
+      <div class="highlight-features">
+        <div class="highlight-feature">
+          <span class="hf-icon">&#x26A1;</span>
+          <h4>Selective Oxidation</h4>
+          <p>Targets electron-rich sites on pathogens without attacking healthy plant tissue at use concentrations.</p>
+        </div>
+        <div class="highlight-feature">
+          <span class="hf-icon">&#x1F52C;</span>
+          <h4>Electron Transfer</h4>
+          <p>Accepts 5 electrons per molecule &mdash; 2.6x the oxidizing capacity of chlorine on a molar basis.</p>
+        </div>
+        <div class="highlight-feature">
+          <span class="hf-icon">&#x1F9EB;</span>
+          <h4>Biofilm Destruction</h4>
+          <p>Dissolved gas diffuses through polysaccharide matrices that block liquid-phase disinfectants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section reveal">
+    <h2>Ready to Switch to ClO&#x2082;?</h2>
+    <p>Let our team design a disinfection protocol tailored to your facility, crop type, and water chemistry.</p>
+    <a href="contact.html" class="cta-btn">Schedule a Consultation</a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">CLEAN<span>Theory</span></a>
+        <p>Next-generation chlorine dioxide solutions engineered for indoor agriculture. Cleaner water, healthier crops, zero compromise.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="solutions/fertox.html">FERTox</a></li>
+          <li><a href="solutions/pathox.html">PATHox</a></li>
+          <li><a href="solutions/airrox.html">AIRRox</a></li>
+          <li><a href="clo2-vs-alternatives.html">ClO&#x2082; Science</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Get in Touch</h4>
+        <p>Ready to upgrade your disinfection?</p>
+        <p><a href="contact.html">Contact our team</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CLEANTheory Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
