@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | CLEANTheory Inc.</title>
+  <meta name="description" content="Request a consultation with CLEANTheory. Get EPA-registered chlorine dioxide solutions tailored to your indoor agriculture facility.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ── Hero ── */
+    .contact-hero {
+      padding: 10rem 2rem 5rem;
+      text-align: center;
+      background: linear-gradient(170deg, #0a0f0a 0%, #0d1f12 50%, #0a0f0a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(34, 197, 94, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .contact-hero h1 span {
+      color: #22c55e;
+    }
+
+    .contact-hero p {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      color: #a1a1aa;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    /* ── Contact Layout ── */
+    .contact-section {
+      padding: 6rem 2rem;
+      background: #0a0f0a;
+    }
+
+    .contact-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* ── Form ── */
+    .contact-form-card {
+      background: linear-gradient(160deg, rgba(34, 197, 94, 0.04) 0%, rgba(10, 15, 10, 0.6) 100%);
+      border: 1px solid rgba(34, 197, 94, 0.12);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .contact-form-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-form-card .form-subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: #a1a1aa;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #d4d4d8;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.3px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #52525b;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(34, 197, 94, 0.5);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.08);
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: #1a1a1a;
+      color: #ffffff;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .btn-submit {
+      display: inline-block;
+      width: 100%;
+      padding: 0.9rem 2rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0a0f0a;
+      background: #22c55e;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      color: #52525b;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    /* ── Info Side ── */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .info-card {
+      background: linear-gradient(160deg, rgba(34, 197, 94, 0.04) 0%, rgba(10, 15, 10, 0.6) 100%);
+      border: 1px solid rgba(34, 197, 94, 0.1);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .info-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .info-card h3 .info-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(34, 197, 94, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-card p,
+    .info-card a {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: #a1a1aa;
+      line-height: 1.7;
+      text-decoration: none;
+    }
+
+    .info-card a:hover {
+      color: #22c55e;
+    }
+
+    /* ── Expect Card ── */
+    .expect-card {
+      background: linear-gradient(160deg, rgba(34, 197, 94, 0.06) 0%, rgba(10, 15, 10, 0.6) 100%);
+      border: 1px solid rgba(34, 197, 94, 0.15);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .expect-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+    }
+
+    .expect-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .expect-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #22c55e;
+    }
+
+    .expect-step .step-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: #a1a1aa;
+      line-height: 1.6;
+      padding-top: 3px;
+    }
+
+    .expect-step .step-text strong {
+      color: #d4d4d8;
+      font-weight: 600;
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, #0a0f0a 0%, #0d1f12 50%, #0a0f0a 100%);
+    }
+
+    .faq-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 1.5rem 0;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 1rem;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+    }
+
+    .faq-question h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #d4d4d8;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover h3 {
+      color: #22c55e;
+    }
+
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .faq-toggle svg {
+      width: 14px;
+      height: 14px;
+      stroke: #22c55e;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-toggle {
+      background: rgba(34, 197, 94, 0.2);
+    }
+
+    .faq-item.open .faq-toggle svg {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-top: 1rem;
+    }
+
+    .faq-answer p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: #a1a1aa;
+      line-height: 1.75;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      padding: 4rem 2rem 0;
+      background: #060a06;
+      border-top: 1px solid rgba(34, 197, 94, 0.08);
+    }
+
+    .footer-grid {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: #71717a;
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
+
+    .footer-brand .footer-logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .footer-brand .footer-logo span {
+      color: #22c55e;
+    }
+
+    .footer-col h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-col ul li a {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: #71717a;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #22c55e;
+    }
+
+    .footer-bottom {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: #52525b;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-legal a {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: #52525b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal a:hover {
+      color: #22c55e;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-hero {
+        padding: 8rem 1.25rem 3.5rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ── Reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">CLEAN<span>Theory</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="solutions/fertox.html">FERTox</a>
+        <a href="solutions/pathox.html">PATHox</a>
+        <a href="solutions/airrox.html">AIRRox</a>
+        <a href="clo2-vs-alternatives.html">ClO&#8322; Science</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta active">Get Started</a>
+      </div>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="contact-hero">
+    <h1>Let's <span>Talk</span></h1>
+    <p>Tell us about your facility and we'll show you how CLEANTheory can protect your grow &mdash; from irrigation to air handling.</p>
+  </section>
+
+  <!-- ── Contact Grid ── -->
+  <section class="contact-section reveal">
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <h2>Request a Consultation</h2>
+        <p class="form-subtitle">Fill out the form below and a CLEANTheory specialist will be in touch within one business day.</p>
+        <form id="contactForm" action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="john@facility.com" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company / Facility Name</label>
+            <input type="text" id="company" name="company" placeholder="Your facility name">
+          </div>
+          <div class="form-group">
+            <label for="interest">Solution of Interest</label>
+            <select id="interest" name="interest">
+              <option value="" disabled selected>Select a solution...</option>
+              <option value="fertox">FERTox &mdash; Irrigation & Fertigation</option>
+              <option value="pathox">PATHox &mdash; Surface Sanitation</option>
+              <option value="airrox">AIRRox &mdash; Airborne Pathogen Control</option>
+              <option value="full-suite">Full Suite (All Three)</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Facility</label>
+            <textarea id="message" name="message" placeholder="Facility type, square footage, current challenges, etc."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
+          <p class="form-note">We respond within one business day. No spam, ever.</p>
+        </form>
+      </div>
+
+      <!-- Info Side -->
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>
+            <span class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            Email
+          </h3>
+          <p><a href="mailto:info@cleantheory.com">info@cleantheory.com</a></p>
+        </div>
+
+        <div class="info-card">
+          <h3>
+            <span class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            Service Area
+          </h3>
+          <p>Currently serving facilities across the eastern United States. Expanding nationwide.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>
+            <span class="info-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            Response Time
+          </h3>
+          <p>We respond to all inquiries within one business day. Urgent requests are prioritized.</p>
+        </div>
+
+        <!-- What to Expect -->
+        <div class="expect-card">
+          <h3>What to Expect</h3>
+          <div class="expect-steps">
+            <div class="expect-step">
+              <span class="step-num">1</span>
+              <div class="step-text"><strong>Discovery Call</strong> &mdash; We learn about your facility, crops, and current challenges.</div>
+            </div>
+            <div class="expect-step">
+              <span class="step-num">2</span>
+              <div class="step-text"><strong>Custom Proposal</strong> &mdash; We design a ClO&#8322; solution plan tailored to your operation.</div>
+            </div>
+            <div class="expect-step">
+              <span class="step-num">3</span>
+              <div class="step-text"><strong>Installation &amp; Launch</strong> &mdash; Our team installs and configures everything on-site.</div>
+            </div>
+            <div class="expect-step">
+              <span class="step-num">4</span>
+              <div class="step-text"><strong>Ongoing Management</strong> &mdash; We monitor, adjust, and maintain your system continuously.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="faq-section reveal">
+    <div class="faq-inner">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>Is chlorine dioxide safe for use in indoor agriculture?</h3>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. All CLEANTheory products are EPA-registered and approved for use in agricultural settings. ClO&#8322; breaks down into salt and water, leaving no harmful residues on crops, surfaces, or in water systems.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>Do I need to buy equipment or install hardware?</h3>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p>No. CLEANTheory is a fully managed service. We provide, install, and maintain all equipment and dosing systems. You don't need to purchase or manage any hardware.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>How quickly can CLEANTheory be deployed in my facility?</h3>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p>Most facilities can be fully operational within 2&ndash;4 weeks of signing. This includes site assessment, system design, equipment installation, and initial calibration.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>What size facilities do you work with?</h3>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p>We work with facilities of all sizes, from boutique operations to large-scale commercial grows. Our solutions scale to match your facility's requirements and can grow with you as you expand.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <h3>How is ClO&#8322; different from chlorine bleach or ozone?</h3>
+          <span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </button>
+        <div class="faq-answer">
+          <p>Chlorine dioxide works through oxidation rather than chlorination, which means it doesn't produce harmful byproducts like trihalomethanes. It's effective across a wider pH range, remains active in biofilm, and breaks down safely. Visit our <a href="clo2-vs-alternatives.html" style="color:#22c55e;">ClO&#8322; Science</a> page for a detailed comparison.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">CLEAN<span>Theory</span></a>
+        <p>EPA-registered chlorine dioxide solutions delivered as a fully managed service for indoor agriculture. Precision chemistry. Total protection.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="solutions/fertox.html">FERTox</a></li>
+          <li><a href="solutions/pathox.html">PATHox</a></li>
+          <li><a href="solutions/airrox.html">AIRRox</a></li>
+          <li><a href="clo2-vs-alternatives.html">ClO&#8322; Science</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@cleantheory.com">info@cleantheory.com</a></li>
+          <li><a href="contact.html">Request a Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 CLEANTheory Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        // toggle current
+        if (!isOpen) item.classList.add('open');
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
+
+    // Simple form handler (demo)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.btn-submit');
+      const originalText = btn.textContent;
+      btn.textContent = 'Message Sent!';
+      btn.style.background = '#16a34a';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        this.reset();
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
